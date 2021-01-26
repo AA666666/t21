@@ -1,0 +1,143 @@
+@import 'base';
+
+@import '~font-awesome/css/font-awesome.css';
+// Some best-practice CSS that's useful for most apps
+// Just remove them if they're not what you want
+html {
+  box-sizing: border-box;
+}
+/*
+ * @Descripttion: [heading]
+ */
+.h {
+  margin-bottom: 0.5rem;
+  font-weight: 550;
+  line-height: 1.2;
+  color: inherit;
+}
+
+@for $i from 1 through 6 {
+  h#{$i},
+  .h#{$i} {
+    @extend .h;
+  }
+  h#{$i},
+  .h#{$i} {
+    font-size: map-get($map: $font-sizes, $key: $i);
+  }
+}
+
+.lead {
+  font-size: $font-size-base * 1.25;
+  font-weight: 300;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+small,
+.small {
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+mark,
+.mark {
+  padding: 3px 5px;
+  color: $color-white;
+  background: $color-primary;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0 !important;
+  list-style: none;
+}
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+*,
+*:focus,
+:focus {
+  outline: 0 !important;
+}
+
+button {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none !important;
+}
+
+a:focus,
+button:focus {
+  outline: none !important;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+a,
+a:focus,
+a:active,
+a:hover {
+  -webkit-transition: $all-transition;
+  -moz-transition: $all-transition;
+  -o-transition: $all-transition;
+  -ms-transition: $all-transition;
+  transition: $all-transition;
+  color: $color-text;
+  text-decoration: none !important;
+}
+
+a[href*='tel'],
+a[href*='mailto'] {
+  white-space: nowrap;
+}
+
+::selection {
+  background: $color-primary;
+  color: $color-white;
+}
+
+::-moz-selection {
+  background: $color-primary;
+  color: $color-white;
+}
+.clearfix::after {
+  display: block;
+  clear: both;
+  content: '';
+}
+
+body {
+  font: $font-size-base 'Microsoft Yahei', 'Helvetica Neue', Helvetica,
+    'Hiragino Sans GB', 'WenQuanYi Micro Hei', 'Heiti SC', tahoma, arial,
+    '\5b8b\4f53', sans-serif;
+  color: $color-text;
+  margin: 0;
+  padding: 0 0 0 40px;
+  height: 100%;
+  line-height: 1.8;
+}
+
+.page-title {
+  color: #ffc802;
+  font-size: 40px;
+  text-shadow: rgba($color: #000000, $alpha: 0.2) 10px 0 20px;
+  margin: 10px 40px;
+}
